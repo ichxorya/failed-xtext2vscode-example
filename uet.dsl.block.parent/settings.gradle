@@ -1,0 +1,3 @@
+include 'uet.dsl.block'
+include 'uet.dsl.block.ide'
+include 'uet.dsl.block.tests'

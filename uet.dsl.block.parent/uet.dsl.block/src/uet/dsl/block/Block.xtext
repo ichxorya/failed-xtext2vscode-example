@@ -1,0 +1,21 @@
+grammar uet.dsl.block.Block with org.eclipse.xtext.common.Terminals
+
+generate block "http://www.dsl.uet/block/Block"
+
+Model:
+	blocks += Block*;
+
+Block:
+	'block' name=ID '{' (members+=Member)* '}';
+
+Member:
+	Block | Field | Alias;
+
+Field:
+	'field' name=ID;
+
+Alias:
+	'alias' name=ID 'aliases' alias=[Member|MemberFQN];
+
+MemberFQN:
+	ID ("." ID)*;
