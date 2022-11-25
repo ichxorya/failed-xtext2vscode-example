@@ -1,0 +1,56 @@
+{
+  "name": "block-vsc",
+  "displayName": "block-vsc",
+  "description": "block on vsc",
+  "version": "0.0.1",
+  "publisher": "ichxorya",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ichxorya/xtext2vscode-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ichxorya/xtext2vscode-example/issues"
+  },
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:block"
+  ],
+  "main": "out/extension",
+  "contributes": {
+    "languages": [{
+      "id": "block",
+      "aliases": ["Block", "block"],
+      "extensions": [".block"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "block",
+      "scopeName": "source.block",
+      "path": "./syntaxes/block.tmLanguage.json"
+    }],
+    "commands": [{
+      "command": "block.examplecommand",
+      "title": "Block Example Command"
+    }]
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.34",
+    "@types/vscode": "^1.67.0",
+    "typescript": "^4.6.4",
+    "@vscode/test-electron": "^2.1.3"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^8.0.1"
+  },
+  "scripts": {
+      "prepublish": "tsc -p ./src",
+      "compile": "tsc -p ./src",
+      "watch": "tsc -w -p ./src",
+      "update-vscode": "node ./node_modules/vscode/bin/install"
+  }
+}
