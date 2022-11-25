@@ -37,9 +37,8 @@ configure(subprojects.findAll { it.name.startsWith('org.xtext') }) {
 	apply plugin: 'org.xtext.xtend'
 	apply from: "${rootDir}/gradle/source-layout.gradle"
 	apply plugin: 'eclipse'
-	apply plugin: 'idea'
 	
-	group = 'org.xtext.example.mydsl'
+	group = 'uet.dsl.block'
 	version = '1.0.0-SNAPSHOT'
 	
 	sourceCompatibility = '17'
