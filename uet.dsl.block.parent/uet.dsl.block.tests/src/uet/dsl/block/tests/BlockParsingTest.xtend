@@ -19,9 +19,11 @@ class BlockParsingTest {
 	ParseHelper<Model> parseHelper
 	
 	@Test
-	def void loadModel() {
+	def void loadModel() throws Exception {
 		val result = parseHelper.parse('''
-			Hello Xtext!
+			block {
+				field HelloWorld
+			}
 		''')
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors

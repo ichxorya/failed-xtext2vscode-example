@@ -1,6 +1,5 @@
 dependencies {
 	api "org.eclipse.xtext:org.eclipse.xtext:${xtextVersion}"
-	api "org.eclipse.xtext:org.eclipse.xtext.xbase:${xtextVersion}"
 }
 configurations {
 	mwe2 {
