@@ -37,11 +37,11 @@ public class ServerLauncher {
 	private LanguageServerImpl languageServer;
 
 	public void start(final InputStream in, final OutputStream out) throws Exception {
-		System.err.println("Starting Xtext Language Server.");
+		System.err.println("Starting Xtext Language Server...");
 		String id = ServerLauncher.class.getName() + "-"
 				+ new Timestamp(System.currentTimeMillis()).toString().replaceAll(" ", "_");
 		Launcher<LanguageClient> launcher = Launcher.createLauncher(languageServer, LanguageClient.class, in, out, true,
-				new PrintWriter(new FileOutputStream((("UETDSL/logs/xxx-" + id) + ".log")), true));
+				new PrintWriter(new FileOutputStream((("xxx-" + id) + ".log")), true));
 		languageServer.connect(launcher.getRemoteProxy());
 		Future<Void> future = launcher.startListening();
 		System.err.println("started.");
@@ -55,9 +55,9 @@ public class ServerLauncher {
 		String id = ServerLauncher.class.getName() + "-"
 				+ new Timestamp(System.currentTimeMillis()).toString().replaceAll(" ", "_");
 		if (ServerLauncher.IS_DEBUG) {
-			FileOutputStream stdFileOut = new FileOutputStream((("UETDSL/logs/logs/out-" + id) + ".log"));
+			FileOutputStream stdFileOut = new FileOutputStream((("out-" + id) + ".log"));
 			System.setOut(new PrintStream(stdFileOut, true));
-			FileOutputStream stdFileErr = new FileOutputStream((("UETDSL/logs/error-" + id) + ".log"));
+			FileOutputStream stdFileErr = new FileOutputStream((("error-" + id) + ".log"));
 			System.setErr(new PrintStream(stdFileErr, true));
 		} else {
 			System.setOut(new PrintStream(new ByteArrayOutputStream()));

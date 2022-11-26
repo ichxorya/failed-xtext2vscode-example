@@ -33,7 +33,7 @@ export function activate(context: ExtensionContext) {
     // Create the language client and start the client.
     lc = new LanguageClient('Xtext Server', serverOptions, clientOptions);
 
-    var disposable2 =commands.registerCommand("block.examplecommand", async () => {
+    var disposable2 = commands.registerCommand("block.examplecommand", async () => {
         let activeEditor = window.activeTextEditor;
         if (!activeEditor || !activeEditor.document || activeEditor.document.languageId !== 'block') {
             return;
